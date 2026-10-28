@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>點火 정보구조도</title>
+<style>
+  @page { size: 1600px 880px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #fff; color: #222; font-family: "Pretendard", "Pretendard Variable", "Apple SD Gothic Neo", sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sheet { position: relative; width: 1600px; height: 880px; padding: 44px 56px; }
+  svg.wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+  header { display: flex; align-items: baseline; gap: 12px; }
+  header h1 { font-size: 22px; font-weight: 700; color: #777; }
+  header .bar { width: 1px; height: 14px; background: #999; }
+  header h2 { font-size: 18px; font-weight: 700; }
+
+  .legend { position: absolute; right: 56px; top: 40px; display: grid; gap: 8px; font-size: 11.5px; }
+  .legend div { display: flex; align-items: center; gap: 10px; }
+  .legend i { width: 46px; height: 16px; display: inline-block; }
+
+  .box { position: relative; z-index: 1; text-align: center; white-space: nowrap; line-height: 1.3; }
+  .box small { display: block; font-size: 11px; font-weight: 400; margin-top: 3px; }
+  .root  { background: #222; color: #fff; font-size: 15px; font-weight: 700; padding: 12px 28px; }
+  .root small { color: #bbb; }
+  .page  { background: #6e6e6e; color: #fff; font-size: 15px; font-weight: 700; padding: 13px 0; width: 200px; }
+  .page small { color: #e2e2e2; }
+  .sub   { background: #ececec; border: 1px solid #a8a8a8; font-size: 13px; padding: 8px 0; width: 176px; }
+  .sub small { color: #777; }
+  .state { background: #fff; border: 1px dashed #8a8a8a; font-size: 12px; padding: 8px 0; width: 210px; color: #444; }
+  .state b { font-weight: 600; }
+  .state small { color: #888; }
+
+  .tree { position: absolute; left: 56px; top: 130px; width: 1100px; }
+  .root-wrap { display: flex; justify-content: center; }
+  .pages { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 70px; justify-items: center; }
+  .col { display: flex; flex-direction: column; align-items: center; }
+  .kids-label { font-size: 11px; color: #555; margin-bottom: 2px; }
+  .kids { display: grid; gap: 10px; margin: 30px 0 0 48px; }
+  .col .state { margin-top: 44px; }
+
+  .global { position: absolute; right: 56px; top: 130px; width: 330px; border-left: 1px solid #cfcfcf; padding-left: 28px; }
+  .global h3 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .global p.desc { font-size: 11px; color: #777; margin-bottom: 18px; }
+  .comp { border: 1px solid #a8a8a8; margin-bottom: 16px; }
+  .comp .hd { background: #ececec; border-bottom: 1px solid #a8a8a8; font-size: 12.5px; font-weight: 600; padding: 8px 12px; display: flex; justify-content: space-between; }
+  .comp .hd span { font-weight: 400; color: #777; font-size: 11px; }
+  .comp ul { list-style: none; padding: 6px 12px; font-size: 12px; }
+  .comp li { padding: 5px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; gap: 10px; }
+  .comp li:last-child { border-bottom: 0; }
+  .comp li span { color: #666; }
+
+  .links h3 { font-size: 13px; font-weight: 700; margin: 26px 0 10px; }
+  .links table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  .links td { padding: 5px 0; border-bottom: 1px solid #eee; vertical-align: top; }
+  .links td:first-child { color: #666; width: 96px; white-space: nowrap; }
+
+  .note { position: absolute; left: 56px; bottom: 36px; font-size: 11px; color: #666; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="sheet" id="sheet">
+  <svg class="wires" id="wires"></svg>
+
+  <header><h1>화면설계서</h1><span class="bar"></span><h2>點火 포트폴리오 웹사이트 정보구조도 (IA)</h2></header>
+
+  <div class="legend">
+    <div><i style="background:#6e6e6e"></i>Page · 1 Depth</div>
+    <div><i style="background:#ececec;border:1px solid #a8a8a8"></i>Sub Page · 2 Depth</div>
+    <div><i style="border:1px dashed #8a8a8a"></i>State · Modal · Section (페이지 내부, URL 없음)</div>
+  </div>
+
+  <div class="tree">
+    <div class="root-wrap"><div class="box root" id="root">點火<small>로고 클릭 → 點火</small></div></div>
+
+    <div class="pages">
+      <div class="col">
+        <div class="box page" data-page>點火<small>/</small></div>
+      </div>
+      <div class="col">
+        <div class="box page" data-page>불씨<small>/profile</small></div>
+        <div class="box state" data-state><b>심지</b><small>Expandable Section · 같은 페이지 펼침</small></div>
+      </div>
+      <div class="col">
+        <div class="box page" data-page id="project">발화<small>/project</small></div>
+        <div class="kids" id="details"></div>
+      </div>
+      <div class="col">
+        <div class="box page" data-page>연료<small>/archive</small></div>
+        <div class="box state" data-state><b>연료 상세</b><small>Modal · 페이지 이동 없음</small></div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="global">
+    <h3>공통 컴포넌트 (Global)</h3>
+    <p class="desc">모든 페이지에 동일 배치 · 페이지 트리에 포함하지 않음</p>
+    <div class="comp">
+      <div class="hd">GNB<span>상단 Sticky</span></div>
+      <ul>
+        <li>로고 點火<span>→ 點火</span></li>
+        <li>불씨 · 발화 · 연료<span>→ 각 페이지</span></li>
+        <li>이력서 PDF<span>다운로드</span></li>
+      </ul>
+    </div>
+    <div class="comp">
+      <div class="hd">FOOTER<span>최하단</span></div>
+      <ul>
+        <li>메일 주소<span>mailto</span></li>
+        <li>이력서 · 자기소개서 PDF<span>다운로드</span></li>
+        <li>TOP<span>최상단 스크롤</span></li>
+      </ul>
+    </div>
+
+    <div class="links">
+      <h3>페이지 간 주요 이동 (본문 링크)</h3>
+      <table>
+        <tr><td>點火</td><td>→ 불씨 · 발화 · 발화 상세</td></tr>
+        <tr><td>발화</td><td>→ 발화 상세 · 불씨</td></tr>
+        <tr><td>발화 상세</td><td>→ 발화 · 다음 발화 상세</td></tr>
+        <tr><td>연료 상세</td><td>→ 해당 발화 상세</td></tr>
+      </table>
+    </div>
+  </aside>
+
+  <p class="note">※ 각 페이지 내부의 섹션 · 상태 구성은 화면설계서(GL-000 ~ AR-001-03)를 따른다.<br>
+  ※ 개인정보(생년월일 · 주소 · 연락처)는 웹에 노출하지 않고 PDF로만 제공한다.</p>
+</div>
+
+<script>
+document.getElementById('details').innerHTML = '<div class="kids-label">발화 상세 · /project/:id × 6 (공통 템플릿)</div>' + [1, 2, 3, 4, 5, 6].map(n => {
+  const id = String(n).padStart(2, '0');
+  return `<div class="box sub" data-sub>${n <= 3 ? '주요 발화' : '발화'} ${id}<small>/project/${id}</small></div>`;
+}).join('');
+
+// 연결선: 레이아웃 후 실제 좌표로 그린다
+function wires() {
+  const o = document.getElementById('sheet').getBoundingClientRect();
+  const r = el => { const b = el.getBoundingClientRect(); return { l: b.left - o.left, r: b.right - o.left, t: b.top - o.top, b: b.bottom - o.top, cx: (b.left + b.right) / 2 - o.left, cy: (b.top + b.bottom) / 2 - o.top }; };
+  let solid = '', dash = '';
+
+  // Root → Page
+  const root = r(document.getElementById('root'));
+  const pages = [...document.querySelectorAll('[data-page]')].map(r);
+  const y = pages[0].t - 30;
+  solid += `M${root.cx},${root.b}V${y}M${pages[0].cx},${y}H${pages[3].cx}`;
+  pages.forEach(p => solid += `M${p.cx},${y}V${p.t}`);
+
+  // PROJECT → Sub Page (좌측 척추)
+  const proj = r(document.getElementById('project'));
+  const subs = [...document.querySelectorAll('[data-sub]')].map(r);
+  const sx = subs[0].l - 24;
+  solid += `M${proj.cx},${proj.b}V${proj.b + 14}H${sx}V${subs[subs.length - 1].cy}`;
+  subs.forEach(s => solid += `M${sx},${s.cy}H${s.l}`);
+
+  // Page → State / Modal / Section (점선)
+  document.querySelectorAll('[data-state]').forEach(s => {
+    const a = r(s.previousElementSibling), b = r(s);
+    dash += `M${a.cx},${a.b}V${b.t}`;
+  });
+
+  document.getElementById('wires').innerHTML =
+    `<path d="${solid}" fill="none" stroke="#666" stroke-width="1.2"/>` +
+    `<path d="${dash}" fill="none" stroke="#8a8a8a" stroke-width="1.2" stroke-dasharray="4 3"/>`;
+}
+document.fonts.ready.then(wires);
+</script>
+</body>
+</html>
