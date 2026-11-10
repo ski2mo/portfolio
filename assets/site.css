@@ -1,12 +1,14 @@
 /* 點火 — 공통 보정 (각 페이지 스타일은 페이지 안에 있음) */
 html{scroll-behavior:smooth}
 body{overflow-x:hidden;-webkit-font-smoothing:antialiased}
-section[id],main[id],footer[id]{scroll-margin-top:96px}
+:root{--project-header-height:calc(33px + 1.21875rem)}
+header{line-height:1.5}
+section[id],main[id],footer[id]{scroll-margin-top:112px}
 button{font:inherit}
 .jy-unavailable{color:#6b6b65}
 .jy-off{opacity:.15;pointer-events:none}
 .jy-hide{display:none!important}
-.jy-ov{position:fixed;inset:0;z-index:50;background:rgba(17,17,16,.9);color:#fff;font-family:'IBM Plex Mono','IBM Plex Sans KR',monospace;font-size:10px;letter-spacing:.06em}
+.jy-ov{position:fixed;inset:0;z-index:50;background:rgba(17,17,16,.9);color:#fff;font-family:'IBM Plex Mono','IBM Plex Sans KR',monospace;font-size:0.8125rem;letter-spacing:.06em}
 .jy-ov a{color:#fff}
 .jy-ov .bar{position:absolute;left:56px;right:56px;top:28px;display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center}
 .jy-ov .bar>:last-child{display:flex;justify-content:flex-end;gap:24px}
@@ -15,11 +17,11 @@ button{font:inherit}
 .jy-ov .nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.4);background:none;color:#fff;cursor:pointer}
 .jy-ov .nav.p{left:56px}.jy-ov .nav.n{right:56px}
 .jy-ov .th{position:absolute;left:0;right:0;bottom:72px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:0 56px}
-.jy-ov .th button{width:96px;aspect-ratio:16/9;background:#ecece5;border:0;opacity:.5;color:#6b6b65;font-size:9px;text-align:left;padding:3px;cursor:pointer}
+.jy-ov .th button{width:96px;aspect-ratio:16/9;background:#ecece5;border:0;opacity:.5;color:#6b6b65;font-size:0.75rem;text-align:left;padding:3px;cursor:pointer}
 .jy-ov .th button.on{opacity:1;outline:2px solid #e8461a;outline-offset:2px}
 .jy-ov .hint{position:absolute;left:0;right:0;bottom:32px;text-align:center;color:rgba(255,255,255,.6)}
 .jy-ov .pdf{position:absolute;left:50%;top:40px;bottom:40px;transform:translateX(-50%);width:min(1040px,calc(100vw - 48px));background:#ecece5;color:#1a1a18;display:flex;flex-direction:column}
-.jy-ov .pdf .pb{height:52px;flex:none;display:grid;grid-template-columns:1fr auto;align-items:center;padding:0 20px;background:#fff;border-bottom:1px solid #dcdcd4}
+.jy-ov .pdf .pb{min-height:52px;flex:none;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:8px 20px;box-sizing:border-box;background:#fff;border-bottom:1px solid #dcdcd4;overflow-wrap:anywhere}
 .jy-ov .pdf .pb a{color:#1a1a18}
 .jy-ov .pdf .pb>:last-child{display:flex;gap:22px}
 .jy-ov .pdf iframe{flex:1;border:0;background:#fff}
@@ -28,6 +30,7 @@ button{font:inherit}
 .jy-ov .ph .im{aspect-ratio:4/3;max-height:calc(100vh - 200px);background:#ecece5;color:#6b6b65;padding:12px;box-sizing:border-box}
 .jy-ov .ph .im img{width:100%;height:100%;object-fit:contain}
 @media (max-width:900px){
+  section[id]{scroll-margin-top:164px}
   [data-sb="lnav"]{grid-template-columns:1fr!important;gap:8px!important}
   [data-sb^="s-"]:not([data-sb="s-record"]){grid-template-columns:1fr!important;gap:24px!important}
   [data-sb="info"]{grid-template-columns:1fr 1fr!important}
@@ -37,31 +40,40 @@ button{font:inherit}
   [data-sb="rl-table"]>div>span:nth-child(n+3){display:none}
   [data-sb="dk-thumbs"]{grid-template-columns:repeat(4,minmax(0,1fr))!important}
   header,[data-sb="lnav"],section,footer,article,main{padding-left:20px!important;padding-right:20px!important}
+  .jy-archive-field>div:first-child{inset-inline:20px!important}
+  .jy-archive-field>[data-ar-tabs]{left:20px;right:auto!important;top:94px!important}
+  .jy-archive-field>.jy-thumb:nth-of-type(2){top:144px!important}
+  .jy-archive-field>.jy-thumb:nth-of-type(12){top:158px!important}
   .jy-ov .bar{left:20px;right:20px;grid-template-columns:1fr auto}
   .jy-ov .bar>:nth-child(2){display:none}
   .jy-ov .sl{width:calc(100vw - 40px)}
   .jy-ov .nav{top:auto;bottom:120px}.jy-ov .nav.p{left:20px}.jy-ov .nav.n{right:20px}
 }
 @media (max-width:600px){
-  section[id]{scroll-margin-top:144px}
-  .jy-home-hero{height:760px!important}
+  header nav{gap:16px!important}
+  .jy-home-hero{height:800px!important}
   .jy-home-intro{top:21%!important;padding-inline:20px!important}
   .jy-home-intro p[aria-hidden="true"]{left:-44px;right:auto!important;top:-58px!important}
   .jy-home-intro>div:last-child{min-height:145px!important}
   .jy-home-hero>span[aria-hidden="true"]{left:20px!important}
-  .jy-home-hero>div:nth-last-child(2),#contact>div:last-child{left:20px!important}
+  .jy-home-hero>div:nth-last-child(2){left:20px!important;right:20px;bottom:98px!important}
   .jy-home-hero>div:last-child{padding-inline:20px!important}
+  .jy-profile-hero{height:740px!important}
+  .jy-profile-hero>div:first-of-type{top:18%!important;padding-inline:20px!important}
+  .jy-profile-hero>span[aria-hidden="true"],.jy-profile-hero>div:last-child,#contact>div:last-child{left:20px!important}
+  #contact>div:first-child{column-gap:24px!important}
   .jy-project-hero{grid-template-columns:minmax(0,1fr)!important;min-height:0!important}
   .jy-project-hero>div:first-child{padding:56px 0 24px!important}
   .jy-project-hero>div:first-child>span[aria-hidden="true"]{left:0!important;top:22px!important}
   .jy-project-hero>[data-sb="cover"]{aspect-ratio:4/3}
-  .jy-archive-field>div:first-child{inset-inline:20px!important}
-  .jy-archive-field>[data-ar-tabs]{left:20px;right:auto!important;top:74px!important}
-  .jy-archive-field>.jy-thumb:nth-of-type(2){top:126px!important}
   .jy-thumb-edge{left:auto!important;right:16px}
   .jy-thumb-edge .cap{left:auto;right:0}
   .jy-archive-field>a[href="#index"]{bottom:42px!important;right:20px!important}
   .jy-archive-field>span:last-of-type{left:20px!important}
+  #index>div:first-child{display:none!important}
+  #index>[data-cat]{grid-template-columns:auto minmax(0,1fr) auto!important;gap:6px 12px!important}
+  #index>[data-cat]>:nth-child(3),#index>[data-cat]>:nth-child(4){grid-column:1 / -1}
+  #index>[data-cat]>:last-child{grid-area:1 / 3}
   .jy-ov .th{padding:0 20px}
   .jy-ov .th button{width:56px}
   .jy-ov .nav{bottom:170px}

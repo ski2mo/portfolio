@@ -30,8 +30,10 @@
   if (anchors.length) {
     var secs = anchors.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
     var spy = function () {
-      var y = window.scrollY + 140, k = 0;
-      secs.forEach(function (s, i) { if (s && s.offsetTop <= y) k = i; });
+      var k = 0;
+      secs.forEach(function (s, i) {
+        if (s && s.getBoundingClientRect().top <= parseFloat(getComputedStyle(s).scrollMarginTop) + 2) k = i;
+      });
       anchors.forEach(function (a, i) { tabStyle(a, i === k); a.removeAttribute('aria-selected'); });
     };
     window.addEventListener('scroll', spy, { passive: true }); spy();
@@ -109,9 +111,9 @@
       b.addEventListener('click', function () {
         var it = A[+b.dataset.i];
         open('<div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(836px,calc(100vw - 32px));box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;background:#fff;color:#1a1a18;padding:16px;letter-spacing:0">' +
-          '<div style="flex:1 1 360px;aspect-ratio:13/10;background:' + esc(it.tone) + ';display:flex;align-items:flex-end;padding:12px;box-sizing:border-box;font-size:10px;color:#6b6b65">' + (it.img ? '<img src="' + esc(it.img) + '" alt="' + esc(it.act) + '" style="width:100%;height:100%;object-fit:cover">' : '[현장 사진 크게 보기]') + '</div>' +
-          '<div style="flex:0 1 260px;display:flex;flex-direction:column;gap:14px"><span style="font-size:10px;letter-spacing:.06em">' + esc(it.no) + ' — ' + esc(it.period) + ' — ' + esc(it.cat) + '</span>' +
-          '<div style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px 10px;font-family:\'Archivo\',\'IBM Plex Sans KR\',sans-serif;font-size:12px;line-height:1.6"><span style="font-size:10px;color:#6b6b65;padding-top:2px">활동</span><span>' + esc(it.act) + '</span><span style="font-size:10px;color:#6b6b65;padding-top:2px">맡은 일</span><span>[맡은 일 텍스트]</span><span style="font-size:10px;color:#6b6b65;padding-top:2px">배운 점</span><span>[배운 점 텍스트]</span></div>' +
+          '<div style="flex:1 1 360px;aspect-ratio:13/10;background:' + esc(it.tone) + ';display:flex;align-items:flex-end;padding:12px;box-sizing:border-box;font-size:0.8125rem;color:#6b6b65">' + (it.img ? '<img src="' + esc(it.img) + '" alt="' + esc(it.act) + '" style="width:100%;height:100%;object-fit:cover">' : '[현장 사진 크게 보기]') + '</div>' +
+          '<div style="flex:0 1 260px;display:flex;flex-direction:column;gap:14px"><span style="font-size:0.8125rem;letter-spacing:.06em">' + esc(it.no) + ' — ' + esc(it.period) + ' — ' + esc(it.cat) + '</span>' +
+          '<div style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px 10px;font-family:\'Archivo\',\'IBM Plex Sans KR\',sans-serif;font-size:1rem;line-height:1.6"><span style="font-size:0.8125rem;color:#6b6b65;padding-top:2px">활동</span><span>' + esc(it.act) + '</span><span style="font-size:0.8125rem;color:#6b6b65;padding-top:2px">맡은 일</span><span>[맡은 일 텍스트]</span><span style="font-size:0.8125rem;color:#6b6b65;padding-top:2px">배운 점</span><span>[배운 점 텍스트]</span></div>' +
           '<a href="#" data-x style="color:#1a1a18;min-height:44px;display:inline-flex;align-items:center">(닫기 −)</a></div></div>');
       });
     });
