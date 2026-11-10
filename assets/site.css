@@ -24,7 +24,7 @@ button{font:inherit}
 [data-sb="ov-cards"]{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:clamp(24px,3vw,40px)}
 [data-sb="ov-cards"]>div{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid #1a1a18}
 [data-sb="ov-cards"] p{margin:0;color:#6b6b65}
-[data-sb="ov-cards"] p,.jy-case-record li p{text-align:justify;text-align-last:start;text-justify:inter-character}
+[data-sb="ov-cards"] p,.jy-case-record li p{text-align:justify;text-align-last:start;text-justify:inter-word;word-break:normal;text-wrap:pretty}
 [data-sb="case-steps"]{margin:0;padding:0;list-style:none}
 [data-sb="case-steps"] li{padding:22px 0 26px;border-top:1px solid #dcdcd4}
 [data-sb="case-steps"] h3{margin:0;font-size:1.125rem;line-height:1.55}
@@ -33,7 +33,7 @@ button{font:inherit}
 .jy-case-deck{display:grid;grid-template-columns:360px minmax(0,1fr);gap:56px;padding:120px 56px 0}
 .jy-case-deck h2,.jy-case-docs h3,.jy-case-record h3{margin:8px 0 0;font-size:1.125rem;line-height:1.5}
 .jy-case-docs{min-width:0;display:grid;gap:16px}
-.jy-case-docs p,.jy-case-record p{margin:8px 0 0;line-height:1.7;color:#6b6b65;word-break:keep-all}
+.jy-case-docs p,.jy-case-record p{margin:8px 0 0;line-height:1.7;color:#6b6b65}
 .jy-case-docs [hidden]{display:none}
 .jy-doc-types,.jy-doc-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
 .jy-doc-types button{min-height:36px;padding:0 3px;border:0;border-bottom:2px solid transparent;background:transparent;color:#6b6b65;cursor:pointer}
