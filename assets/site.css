@@ -5,7 +5,8 @@ body{overflow-x:hidden;-webkit-font-smoothing:antialiased}
 header{line-height:1.5}
 section[id],main[id],footer[id]{scroll-margin-top:112px}
 button{font:inherit}
-.jy-portrait{position:absolute;inset:0;display:block;object-fit:cover;object-position:43% center;filter:grayscale(1)}
+.jy-portrait{position:absolute;inset:0;overflow:hidden}
+.jy-portrait img{display:block;object-fit:cover;object-position:43% center;transform:scale(1.14);transform-origin:center 85%}
 .jy-home-intro p[aria-hidden="true"]{right:min(155px,calc(50vw - 329px))!important}
 .jy-unavailable{color:#6b6b65}
 .jy-off{opacity:.15;pointer-events:none}
