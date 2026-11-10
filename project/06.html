@@ -11,7 +11,7 @@ body{margin:0;background: #ffffff}
 a{color:#1a1a18;text-decoration:none}a:hover{text-decoration:underline;text-decoration-color:#e8461a;text-underline-offset:3px}
 a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
 </style>
-<link rel="stylesheet" href="../assets/site.css?v=case-copy">
+<link rel="stylesheet" href="../assets/site.css?v=case-docs">
 </head>
 <body id="top">
 <div style="background: #ffffff; color: #1a1a18; font-family: 'Archivo', 'IBM Plex Sans KR', sans-serif">
@@ -26,7 +26,7 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
   </header>
   <div data-sb="lnav" style="position: sticky; top: var(--project-header-height); z-index: 4; background: #ffffff; display: grid; grid-template-columns: 360px minmax(0, 1fr) auto; gap: 56px; align-items: center; padding: 12px 56px; border-bottom: 1px solid #dcdcd4; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65">
     <span data-sb="crumb"><a href="../project.html" style="color: #6b6b65">발화</a> / <span style="color: #1a1a18">WDC 부산 브랜드</span></span>
-    <nav data-sb="anchors" aria-label="섹션 바로가기" style="display: flex; flex-wrap: wrap; gap: 8px 22px"><a href="#overview" data-sb="lnav-act" style="text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: #e8461a; text-underline-offset: 5px">소개</a><a href="#role" style="color: #6b6b65">참여 내용</a><a href="#afterglow" style="color: #6b6b65">경험</a></nav>
+    <nav data-sb="anchors" aria-label="섹션 바로가기" style="display: flex; flex-wrap: wrap; gap: 8px 22px"><a href="#overview" style="text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: #e8461a; text-underline-offset: 5px">소개</a><a href="#deck" style="color: #6b6b65">문서</a><a href="#role" style="color: #6b6b65">참여 내용</a><a href="#afterglow" style="color: #6b6b65">경험</a><a href="#record" style="color: #6b6b65">진행 과정</a></nav>
     <span data-sb="counter">.04 / 06</span>
   </div>
   <div style="padding: 14px 56px 0; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em"><a data-sb="back" href="../project.html" style="min-height: 32px; display: inline-flex; align-items: center">(← 발화 목록으로)</a></div>
@@ -42,6 +42,7 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
   <section data-sb="info" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 240px; gap: 28px 40px; padding: 40px 56px; border-top: 1px solid #dcdcd4; border-bottom: 1px solid #dcdcd4">
     <div data-sb="i-kind" style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">구분</span><span style="font-size: 1rem; line-height: 1.6">팀 제안 프로젝트</span></div>
     <div data-sb="i-period" style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">진행 연도</span><span style="font-size: 1rem; line-height: 1.6">2026</span></div>
+    <a href="#deck" class="jy-doc-link jy-doc-jump" style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">프로젝트 문서 보기 ↓</a>
   </section>
   <section id="overview" data-sb="s-overview" style="display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 56px; padding: 120px 56px 0">
     <div style="display: flex; flex-direction: column; gap: 12px">
@@ -65,9 +66,30 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
       </div></div>
     </div>
   </section>
+  <section id="deck" data-sb="s-deck" class="jy-case-deck">
+    <div>
+      <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">02 — 문서 · DECK</span>
+      <h2>프로젝트 문서</h2>
+    </div>
+    <div class="jy-case-docs">
+      <div data-sb="dk-tabs" class="jy-doc-types" role="group" aria-label="문서 선택"></div>
+      <div aria-live="polite">
+        <h3 data-sb="dk-title">문서 안내</h3>
+        <p data-sb="dk-body">기획서와 화면설계서 등 프로젝트 문서를 확인할 수 있습니다.</p>
+      </div>
+      <button type="button" data-sb="dk-slide" class="jy-doc-slide" aria-label="현재 장표 크게 보기" hidden></button>
+      <div data-sb="dk-ctrl" class="jy-doc-controls" hidden>
+        <button type="button" aria-label="이전 장표">←</button>
+        <span data-sb="dk-count"></span>
+        <button type="button" aria-label="다음 장표">→</button>
+      </div>
+      <div data-sb="dk-thumbs" class="jy-doc-thumbs" role="group" aria-label="장표 선택" hidden></div>
+      <a data-sb="dk-pdf" class="jy-doc-link" hidden>PDF 보기 ↗</a>
+    </div>
+  </section>
   <section id="role" data-sb="s-role" style="display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 56px; padding: 120px 56px 0">
     <div style="display: flex; flex-direction: column; gap: 12px">
-      <span data-sb="role-label" style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">02 — 참여 과정 · PROCESS:</span>
+      <span data-sb="role-label" style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">03 — 참여 과정 · PROCESS:</span>
       <h2 style="margin: 0; font-size: 1.125rem; font-weight: 500; line-height: 1.6">기획과 작업 과정</h2>
     </div>
     <div style="min-width: 0; display: flex; flex-direction: column; gap: 24px">
@@ -80,7 +102,7 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
   </section>
   <section id="afterglow" data-sb="s-afterglow" style="display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 56px; padding: 120px 56px 0">
     <div style="display: flex; flex-direction: column; gap: 12px">
-      <span data-sb="afterglow-label" style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">03 — 회고 · AFTERGLOW:</span>
+      <span data-sb="afterglow-label" style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">04 — 회고 · AFTERGLOW:</span>
       <h2 data-sb="ag-title" style="margin: 0; font-size: 1.125rem; font-weight: 500; line-height: 1.6">브랜드를 만드는 일과 쓰게 하는 일</h2>
     </div>
     <div style="min-width: 0; display: flex; flex-direction: column; gap: 24px">
@@ -88,6 +110,14 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
       <p data-sb="ag-body" style="margin: 0; max-width: 760px; font-size: 1.125rem; line-height: 1.75">제안서를 다듬으며 시안의 완성도만으로는 여러 기관이 함께 사용할 때 생기는 문제를 설명하기 어렵다는 걸 느꼈습니다. 한 장의 포스터를 예쁘게 만드는 기준에 더해, 다른 주체가 각자의 행사에 적용하더라도 공통 브랜드로 읽힐 조건을 명시하는 데 집중했습니다.</p>
       <div data-sb="ag-skills" style="display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 1px solid #dcdcd4"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">이 프로젝트로 배운 역량:</span><div data-sb="ag-tags" style="display: flex; flex-wrap: wrap; gap: 6px"><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">제안서 구성</span><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">과업 범위 정의</span><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">브랜드 운영</span><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">프로젝트 총괄</span></div></div>
     </div>
+  </section>
+  <section id="record" data-sb="s-record" class="jy-case-record">
+    <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">05 — 진행 과정 · RECORD</span>
+    <ol>
+      <li><h3>제안요청서 검토</h3><p>과업을 전략, 시각 아이덴티티, 매체 적용, 운영체계로 나눴습니다.</p></li>
+      <li><h3>디자인 방향 선택</h3><p>브랜드 심볼 안을 비교하고 매체별 위계와 공통 표기 기준을 정리했습니다.</p></li>
+      <li><h3>제안서 보완</h3><p>팀이 선택한 안과 사용자 검증·발주기관 승인이 필요한 사항을 구분했습니다.</p></li>
+    </ol>
   </section>
   <nav data-sb="pnav" aria-label="발화 이동" style="margin-top: 160px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; padding: 28px 56px; border-top: 1px solid #dcdcd4">
     <a data-sb="pn-prev" href="03.html" style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">(← 이전 발화)</span><span style="font-size: 1.125rem">.03 위버스 미디어 탐색 경로 개선</span></a>
@@ -101,7 +131,7 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
     <a data-sb="top" href="#top">(Top ↑)</a>
   </footer>
 </div>
-<script>window.PROJECT = {"no": "06", "name": "WDC 부산 브랜드", "docs": [{"type": "제안서", "title": "2028 세계디자인수도(WDC) 부산 브랜드 개발 및 운영체계 수립 제안서", "planned": true, "slides": [], "pdf": ""}]};</script>
-<script src="../assets/site.js"></script>
+<script>window.PROJECT = {"no": "04", "name": "WDC 부산 브랜드", "docs": [{"type": "제안서", "title": "2028 세계디자인수도(WDC) 부산 브랜드 개발 및 운영체계 수립 제안서", "slides": [], "pdf": ""}, {"type": "기획서", "title": "WDC 부산 브랜드 기획서", "slides": [], "pdf": ""}, {"type": "화면설계서", "title": "WDC 부산 브랜드 화면설계서", "slides": [], "pdf": ""}]};</script>
+<script src="../assets/site.js?v=case-docs"></script>
 </body>
 </html>

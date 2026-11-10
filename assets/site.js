@@ -41,59 +41,107 @@
 
   /* 발화 상세: 문서 */
   var P = window.PROJECT, deck = document.getElementById('deck');
-  if (P && deck) {
-    var docs = P.docs.filter(function (d) { return !d.planned; }), type = 'ALL', di = 0, si = 0;
-    var list = function () { return docs.filter(function (d) { return type === 'ALL' || d.type === type; }); };
-    var N = function () { var d = list()[di]; return d && d.slides.length ? d.slides.length : 8; };
-    var two = function (n) { return (n < 10 ? '0' : '') + n; };
-    var title = $('[data-sb="dk-title"]'), body = $('[data-sb="dk-body"]'), slide = $('[data-sb="dk-slide"]'), thumbs = $('[data-sb="dk-thumbs"]'), ctrl = $('[data-sb="dk-ctrl"]');
-    var slideHTML = function (d, i) { return d && d.slides[i] ? '<img src="' + esc(d.slides[i]) + '" alt="' + esc(d.title) + ' ' + (i + 1) + '쪽" style="width:100%;height:100%;object-fit:contain;display:block">' : '[' + esc(d ? d.type : '문서') + ' — 장표 ' + two(i + 1) + ']'; };
-    var render = function () {
-      var d = list()[di];
-      title.textContent = d ? d.title : '문서 준비 중';
-      if (body) body.textContent = d ? d.type + ' · ' + N() + '장' + (list().length > 1 ? ' — 이 종류의 문서 ' + list().length + '건 중 ' + (di + 1) : '') : '';
-      slide.innerHTML = slideHTML(d, si) + '<span style="position: absolute; right: 12px; bottom: 12px">(크게 보기 ⤢)</span>';
-      slide.style.cursor = 'zoom-in';
-      $$('span', ctrl)[0].textContent = two(si + 1) + ' / ' + two(N());
-      var cells = $$('div', thumbs), proto = cells[0].getAttribute('style').replace(/;?\s*(opacity|outline|outline-offset):[^;]*/g, '');
-      var h = ''; for (var i = 0; i < N(); i++) h += '<div role="button" tabindex="0" data-i="' + i + '" style="' + proto + (i === si ? '; outline: 2px solid #e8461a; outline-offset: -2px' : '; opacity: 0.75') + '; cursor: pointer">' + two(i + 1) + '</div>';
-      thumbs.innerHTML = h;
-      var a = $$('a', ctrl); a[0].style.opacity = si === 0 ? .3 : 1; a[1].style.opacity = si === N() - 1 ? .3 : 1;
-    };
-    var go = function (i) { si = Math.max(0, Math.min(N() - 1, i)); render(); };
-    $$('[data-sb="dk-tabs"] a').forEach(function (a) {
-      a.addEventListener('click', function (e) { e.preventDefault(); if (a.getAttribute('aria-disabled')) return; type = a.dataset.type; di = 0; si = 0; $$('[data-sb="dk-tabs"] a').forEach(function (b) { if (!b.getAttribute('aria-disabled')) tabStyle(b, b === a); }); render(); });
+  if (P && deck && P.docs.length) {
+    var tabs = $('[data-sb="dk-tabs"]', deck);
+    var title = $('[data-sb="dk-title"]', deck);
+    var body = $('[data-sb="dk-body"]', deck);
+    var slide = $('[data-sb="dk-slide"]', deck);
+    var thumbs = $('[data-sb="dk-thumbs"]', deck);
+    var ctrl = $('[data-sb="dk-ctrl"]', deck);
+    var count = $('[data-sb="dk-count"]', ctrl);
+    var arrows = $$('button', ctrl);
+    var pdfLink = $('[data-sb="dk-pdf"]', deck);
+    var doc = P.docs[0], si = 0;
+
+    function slideHTML() {
+      return '<img src="' + esc(doc.slides[si]) + '" alt="' + esc(doc.title) + ' ' + (si + 1) + '쪽">';
+    }
+
+    function go(index) {
+      si = Math.max(0, Math.min(doc.slides.length - 1, index));
+      slide.innerHTML = slideHTML();
+      count.textContent = (si + 1) + ' / ' + doc.slides.length;
+      arrows[0].disabled = si === 0;
+      arrows[1].disabled = si === doc.slides.length - 1;
+      $$('button', thumbs).forEach(function (b, i) {
+        b.setAttribute('aria-pressed', i === si ? 'true' : 'false');
+      });
+    }
+
+    function select(nextDoc, tab) {
+      doc = nextDoc;
+      var hasSlides = doc.slides.length > 0;
+      $$('button', tabs).forEach(function (b) {
+        b.setAttribute('aria-pressed', b === tab ? 'true' : 'false');
+      });
+      title.textContent = doc.title;
+      body.textContent = hasSlides ? '장표 ' + doc.slides.length + '장' :
+        (doc.pdf ? 'PDF로 전체 문서를 볼 수 있습니다.' : '공개용 문서를 준비 중입니다.');
+      slide.hidden = ctrl.hidden = thumbs.hidden = !hasSlides;
+      pdfLink.hidden = !doc.pdf;
+      if (doc.pdf) pdfLink.href = doc.pdf;
+      else pdfLink.removeAttribute('href');
+
+      thumbs.replaceChildren();
+      if (hasSlides) {
+        doc.slides.forEach(function (_, i) {
+          var button = document.createElement('button');
+          button.type = 'button';
+          button.textContent = i + 1;
+          button.setAttribute('aria-label', '장표 ' + (i + 1));
+          button.addEventListener('click', function () { go(i); });
+          thumbs.appendChild(button);
+        });
+        go(0);
+      }
+    }
+
+    P.docs.forEach(function (item) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = item.type;
+      button.setAttribute('aria-label', item.title);
+      button.addEventListener('click', function () { select(item, button); });
+      tabs.appendChild(button);
     });
-    var ca = $$('a', ctrl);
-    ca[0].addEventListener('click', function (e) { e.preventDefault(); go(si - 1); });
-    ca[1].addEventListener('click', function (e) { e.preventDefault(); go(si + 1); });
-    thumbs.addEventListener('click', function (e) { var t = e.target.closest('[data-i]'); if (t) go(+t.dataset.i); });
-    var big = function () {
-      var d = list()[di]; if (!d) return;
-      var draw = function () {
-        var th = ''; for (var i = 0; i < N(); i++) th += '<button data-i="' + i + '"' + (i === si ? ' class="on"' : '') + '>' + two(i + 1) + '</button>';
-        open('<div class="bar"><span>' + esc(P.name) + ' — ' + esc(d.title) + '</span><span>' + two(si + 1) + ' / ' + two(N()) + '</span><span><a href="#" data-pdf>(PDF 전체보기 ↗)</a><a href="#" data-x>(닫기 ✕)</a></span></div>' +
-          '<button class="nav p" aria-label="이전 장표">←</button><div class="sl">' + slideHTML(d, si) + '</div><button class="nav n" aria-label="다음 장표">→</button>' +
-          '<div class="th">' + th + '</div><span class="hint">← → 키로 이동 · Esc로 닫기</span>');
+    arrows[0].addEventListener('click', function () { go(si - 1); });
+    arrows[1].addEventListener('click', function () { go(si + 1); });
+    slide.addEventListener('click', function () {
+      function draw() {
+        var choices = doc.slides.map(function (_, i) {
+          return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === si) + '">' + (i + 1) + '</button>';
+        }).join('');
+        open('<div class="bar"><span>' + esc(doc.title) + '</span><span>' + (si + 1) + ' / ' + doc.slides.length +
+          '</span><span>' + (doc.pdf ? '<a href="' + esc(doc.pdf) + '" data-pdf>PDF 보기 ↗</a>' : '') + '<a href="#" data-x>닫기 ✕</a></span></div>' +
+          '<button class="nav p" aria-label="이전 장표">←</button><div class="sl">' + slideHTML() +
+          '</div><button class="nav n" aria-label="다음 장표">→</button><div class="th" aria-label="장표 선택">' + choices +
+          '</div><span class="hint">← → 키로 이동 · Esc로 닫기</span>');
         $('.nav.p', ov).onclick = function () { go(si - 1); draw(); };
         $('.nav.n', ov).onclick = function () { go(si + 1); draw(); };
-        $('.th', ov).onclick = function (e) { var t = e.target.closest('[data-i]'); if (t) { go(+t.dataset.i); draw(); } };
-        $('[data-pdf]', ov).onclick = function (e) { e.preventDefault(); pdf(d); };
-        keyFn = function (e) { if (e.key === 'ArrowLeft') { go(si - 1); draw(); } if (e.key === 'ArrowRight') { go(si + 1); draw(); } };
-      };
+        $('.th', ov).onclick = function (e) {
+          var target = e.target.closest('[data-i]');
+          if (target) { go(+target.dataset.i); draw(); }
+        };
+        $('[aria-pressed="true"]', ov).scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        var pdfButton = $('[data-pdf]', ov);
+        if (pdfButton) pdfButton.onclick = function (e) { e.preventDefault(); pdf(doc); };
+        keyFn = function (e) {
+          if (e.key === 'ArrowLeft') { go(si - 1); draw(); }
+          if (e.key === 'ArrowRight') { go(si + 1); draw(); }
+        };
+      }
       draw();
-    };
-    slide.addEventListener('click', big);
-    var dp = $('[data-sb="dk-pdf"]'); if (dp) dp.addEventListener('click', function (e) { e.preventDefault(); pdf(list()[di]); });
-    render();
+    });
+    pdfLink.addEventListener('click', function (e) { e.preventDefault(); pdf(doc); });
+    select(doc, tabs.firstElementChild);
   }
+
   function pdf(d) {
-    if (!d) return;
-    open('<div class="pdf"><div class="pb"><span>' + esc(d.title) + '.pdf</span><span>' + (d.pdf ? '<a href="' + esc(d.pdf) + '" download>(다운로드 ↓)</a>' : '') + '<a href="#" data-x>(닫기 ✕)</a></span></div>' +
-      (d.pdf ? '<iframe src="' + esc(d.pdf) + '" title="' + esc(d.title) + '"></iframe>' : '<div class="empty">[PDF 파일 연결 전 — assets 폴더에 PDF를 넣고 경로를 지정하세요]</div>') + '</div>');
+    if (!d.pdf) return;
+    open('<div class="pdf"><div class="pb"><span>' + esc(d.title) + '</span><span>' +
+      '<a href="' + esc(d.pdf) + '" download>다운로드 ↓</a><a href="#" data-x>닫기 ✕</a></span></div>' +
+      '<iframe src="' + esc(d.pdf) + '" title="' + esc(d.title) + '"></iframe></div>');
   }
-  var pb = $('[data-sb="pdfbtn"]');
-  if (pb && P) pb.addEventListener('click', function (e) { e.preventDefault(); pdf(P.docs.filter(function (d) { return !d.planned; })[0]); });
 
   /* 진행 과정 사진 크게 보기 */
   $$('[data-sb="rc-grid"] figure').forEach(function (f) {

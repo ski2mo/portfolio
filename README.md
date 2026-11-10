@@ -14,7 +14,7 @@
 각 project/0N.html 맨 아래 `window.PROJECT = {...}` 안의 문서마다
 - `"slides": ["../assets/notomato/plan-01.png", ...]` — 장표 이미지 (넣으면 장 수가 자동으로 바뀜)
 - `"pdf": "../assets/notomato/plan.pdf"` — PDF 보기 · 다운로드
-- 작성이 끝난 문서는 `"planned": true`를 `false`로 바꾸면 문서 탭에 나타남
+- 파일이 없는 문서도 선택할 수 있으며, 장표나 PDF를 연결하면 해당 보기 기능이 나타남
 
 ## 현장 기록 사진
 archive.html 맨 아래 `window.ARCHIVE` 각 항목의 `"img": "assets/archive/01-1.jpg"`에 사진 경로를 넣으면 크게 보기에 표시됨.

@@ -11,7 +11,7 @@ body{margin:0;background: #ffffff}
 a{color:#1a1a18;text-decoration:none}a:hover{text-decoration:underline;text-decoration-color:#e8461a;text-underline-offset:3px}
 a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
 </style>
-<link rel="stylesheet" href="../assets/site.css?v=case-copy">
+<link rel="stylesheet" href="../assets/site.css?v=case-docs">
 </head>
 <body id="top">
 <div style="background: #ffffff; color: #1a1a18; font-family: 'Archivo', 'IBM Plex Sans KR', sans-serif">
@@ -26,7 +26,7 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
   </header>
   <div data-sb="lnav" style="position: sticky; top: var(--project-header-height); z-index: 4; background: #ffffff; display: grid; grid-template-columns: 360px minmax(0, 1fr) auto; gap: 56px; align-items: center; padding: 12px 56px; border-bottom: 1px solid #dcdcd4; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65">
     <span data-sb="crumb"><a href="../project.html" style="color: #6b6b65">발화</a> / <span style="color: #1a1a18">NOTOMATO</span></span>
-    <nav data-sb="anchors" aria-label="섹션 바로가기" style="display: flex; flex-wrap: wrap; gap: 8px 22px"><a href="#overview" data-sb="lnav-act" style="text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: #e8461a; text-underline-offset: 5px">소개</a><a href="#deck" style="color: #6b6b65">문서</a><a href="#role" style="color: #6b6b65">참여 내용</a><a href="#afterglow" style="color: #6b6b65">경험</a><a href="#record" style="color: #6b6b65">진행 과정</a></nav>
+    <nav data-sb="anchors" aria-label="섹션 바로가기" style="display: flex; flex-wrap: wrap; gap: 8px 22px"><a href="#overview" style="text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: #e8461a; text-underline-offset: 5px">소개</a><a href="#deck" style="color: #6b6b65">문서</a><a href="#role" style="color: #6b6b65">참여 내용</a><a href="#afterglow" style="color: #6b6b65">경험</a><a href="#record" style="color: #6b6b65">진행 과정</a></nav>
     <span data-sb="counter">.02 / 06</span>
   </div>
   <div style="padding: 14px 56px 0; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em"><a data-sb="back" href="../project.html" style="min-height: 32px; display: inline-flex; align-items: center">(← 발화 목록으로)</a></div>
@@ -42,9 +42,7 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
   <section data-sb="info" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 240px; gap: 28px 40px; padding: 40px 56px; border-top: 1px solid #dcdcd4; border-bottom: 1px solid #dcdcd4">
     <div data-sb="i-kind" style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">구분</span><span style="font-size: 1rem; line-height: 1.6">팀 프로젝트</span></div>
     <div data-sb="i-period" style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">진행 연도</span><span style="font-size: 1rem; line-height: 1.6">2026</span></div>
-    <div style="grid-column: 4; grid-row: 1 / span 2; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; gap: 16px">
-      <a data-sb="pdfbtn" href="#" style="display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border: 1px solid #1a1a18; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">(문서 PDF 전체보기 ↗)</a>
-    </div>
+    <a href="#deck" class="jy-doc-link jy-doc-jump" style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">프로젝트 문서 보기 ↓</a>
   </section>
   <section id="overview" data-sb="s-overview" style="display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 56px; padding: 120px 56px 0">
     <div style="display: flex; flex-direction: column; gap: 12px">
@@ -68,20 +66,25 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
       </div></div>
     </div>
   </section>
-  <section id="deck" data-sb="s-deck" style="display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 56px; padding: 120px 56px 0">
-    <div style="display: flex; flex-direction: column; gap: 12px">
-      <span data-sb="deck-label" style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">02 — 문서 · DECK:</span>
-      <h2 data-sb="dk-title" style="margin: 0; font-size: 1.125rem; font-weight: 500; line-height: 1.6">초개인화 식이관리 서비스 NOTOMATO 서비스 기획서</h2><p data-sb="dk-body" style="margin: 0; font-size: 1.125rem; line-height: 1.75">[문서 구성 — 페이지 수 · 주요 목차]</p><div data-sb="dk-ctrl" style="display: flex; align-items: center; gap: 16px; margin-top: 12px; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">
-        <a href="#" aria-label="이전 장표" style="display: inline-grid; place-items: center; width: 36px; height: 36px; border: 1px solid #dcdcd4">←</a>
-        <span>03 / [N]</span>
-        <a href="#" aria-label="다음 장표" style="display: inline-grid; place-items: center; width: 36px; height: 36px; border: 1px solid #dcdcd4">→</a>
-      </div>
-      <a data-sb="dk-pdf" href="#" style="align-self: flex-start; display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border: 1px solid #1a1a18; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">(PDF 전체보기 ↗)</a>
+  <section id="deck" data-sb="s-deck" class="jy-case-deck">
+    <div>
+      <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">02 — 문서 · DECK</span>
+      <h2>프로젝트 문서</h2>
     </div>
-    <div style="min-width: 0; display: flex; flex-direction: column; gap: 24px">
-      <div data-sb="dk-tabs" role="tablist" aria-label="문서 종류" style="display: flex; flex-wrap: wrap; gap: 4px 22px; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em"><a href="#" role="tab" data-type="ALL" aria-selected="true" style="min-height: 32px; display: inline-flex; align-items: center; text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: #e8461a; text-underline-offset: 5px">ALL (2)</a><a href="#" role="tab" data-type="기획서" aria-selected="false" style="min-height: 32px; display: inline-flex; align-items: center; color: #6b6b65">기획서 (1)</a><a href="#" role="tab" data-type="제안서" aria-selected="false" aria-disabled="true" style="min-height: 32px; display: inline-flex; align-items: center; color: #6b6b65; opacity: 0.35; pointer-events: none">제안서 (0)</a><a href="#" role="tab" data-type="보고서" aria-selected="false" aria-disabled="true" style="min-height: 32px; display: inline-flex; align-items: center; color: #6b6b65; opacity: 0.35; pointer-events: none">보고서 (0)</a><a href="#" role="tab" data-type="화면설계서" aria-selected="false" style="min-height: 32px; display: inline-flex; align-items: center; color: #6b6b65">화면설계서 (1)</a></div>
-      <div data-sb="dk-slide" style="position: relative; aspect-ratio: 16 / 9; background: #ecece5; padding: 16px; box-sizing: border-box; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65">[기획서 — 장표 03]<span style="position: absolute; right: 12px; bottom: 12px">(크게 보기 ⤢)</span></div>
-      <div data-sb="dk-thumbs" style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px"><div style="aspect-ratio: 16 / 9; background: #ecece5; opacity: 0.75; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; padding: 4px; box-sizing: border-box">01</div><div style="aspect-ratio: 16 / 9; background: #ecece5; opacity: 0.75; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; padding: 4px; box-sizing: border-box">02</div><div style="aspect-ratio: 16 / 9; background: #ecece5; outline: 2px solid #e8461a; outline-offset: -2px; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; padding: 4px; box-sizing: border-box">03</div><div style="aspect-ratio: 16 / 9; background: #ecece5; opacity: 0.75; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; padding: 4px; box-sizing: border-box">04</div><div style="aspect-ratio: 16 / 9; background: #ecece5; opacity: 0.75; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; padding: 4px; box-sizing: border-box">05</div><div style="aspect-ratio: 16 / 9; background: #ecece5; opacity: 0.75; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; padding: 4px; box-sizing: border-box">06</div><div style="aspect-ratio: 16 / 9; background: #ecece5; opacity: 0.75; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; padding: 4px; box-sizing: border-box">07</div><div style="aspect-ratio: 16 / 9; background: #ecece5; opacity: 0.75; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; padding: 4px; box-sizing: border-box">08</div></div>
+    <div class="jy-case-docs">
+      <div data-sb="dk-tabs" class="jy-doc-types" role="group" aria-label="문서 선택"></div>
+      <div aria-live="polite">
+        <h3 data-sb="dk-title">문서 안내</h3>
+        <p data-sb="dk-body">기획서와 화면설계서 등 프로젝트 문서를 확인할 수 있습니다.</p>
+      </div>
+      <button type="button" data-sb="dk-slide" class="jy-doc-slide" aria-label="현재 장표 크게 보기" hidden></button>
+      <div data-sb="dk-ctrl" class="jy-doc-controls" hidden>
+        <button type="button" aria-label="이전 장표">←</button>
+        <span data-sb="dk-count"></span>
+        <button type="button" aria-label="다음 장표">→</button>
+      </div>
+      <div data-sb="dk-thumbs" class="jy-doc-thumbs" role="group" aria-label="장표 선택" hidden></div>
+      <a data-sb="dk-pdf" class="jy-doc-link" hidden>PDF 보기 ↗</a>
     </div>
   </section>
   <section id="role" data-sb="s-role" style="display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 56px; padding: 120px 56px 0">
@@ -108,9 +111,13 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
       <div data-sb="ag-skills" style="display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 1px solid #dcdcd4"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">이 프로젝트로 배운 역량:</span><div data-sb="ag-tags" style="display: flex; flex-wrap: wrap; gap: 6px"><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">서비스 기획</span><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">정보구조 설계</span><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">와이어프레임</span><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">디자인 방향 조율</span></div></div>
     </div>
   </section>
-  <section id="record" data-sb="s-record" style="padding: 120px 56px 0; display: flex; flex-direction: column; gap: 24px">
-    <div style="display: flex; justify-content: space-between; align-items: baseline"><span data-sb="rc-label" style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">05 — 진행 과정 · RECORD:</span><span data-sb="rc-count" style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65">사진 [N]장</span></div>
-    <div data-sb="rc-grid" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><div style="background: #ecece5; padding: 12px; box-sizing: border-box; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; aspect-ratio: 4 / 3">[최종 PT 사진]</div><figcaption style="display: flex; justify-content: space-between; gap: 8px; font-size: 1rem"><span>최종 PT</span><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65">[YYYY.MM.DD]</span></figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><div style="background: #ecece5; padding: 12px; box-sizing: border-box; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; aspect-ratio: 4 / 3">[중간 회의 사진]</div><figcaption style="display: flex; justify-content: space-between; gap: 8px; font-size: 1rem"><span>중간 회의</span><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65">[YYYY.MM.DD]</span></figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><div style="background: #ecece5; padding: 12px; box-sizing: border-box; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; aspect-ratio: 4 / 3">[사용자 인터뷰 사진]</div><figcaption style="display: flex; justify-content: space-between; gap: 8px; font-size: 1rem"><span>사용자 인터뷰</span><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65">[YYYY.MM.DD]</span></figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><div style="background: #ecece5; padding: 12px; box-sizing: border-box; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65; aspect-ratio: 4 / 3">[아이디어 스케치 사진]</div><figcaption style="display: flex; justify-content: space-between; gap: 8px; font-size: 1rem"><span>아이디어 스케치</span><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em; color: #6b6b65">[YYYY.MM.DD]</span></figcaption></figure></div>
+  <section id="record" data-sb="s-record" class="jy-case-record">
+    <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">05 — 진행 과정 · RECORD</span>
+    <ol>
+      <li><h3>문제 정의</h3><p>질환과 복약 상황에 따라 성분표에서 확인해야 할 기준을 정리했습니다.</p></li>
+      <li><h3>시안 비교</h3><p>팀원별 시안을 나란히 검토하고 공통 디자인 방향을 정했습니다.</p></li>
+      <li><h3>화면 설계</h3><p>홈, 사진 분석, 식단 기록, 마이케어 사이의 이동을 와이어프레임에 옮겼습니다.</p></li>
+    </ol>
   </section>
   <nav data-sb="pnav" aria-label="발화 이동" style="margin-top: 160px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; padding: 28px 56px; border-top: 1px solid #dcdcd4">
     <a data-sb="pn-prev" href="05.html" style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-size: 0.8125rem; letter-spacing: 0.06em">(← 이전 발화)</span><span style="font-size: 1.125rem">.01 HAELON</span></a>
@@ -124,7 +131,7 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
     <a data-sb="top" href="#top">(Top ↑)</a>
   </footer>
 </div>
-<script>window.PROJECT = {"no": "01", "name": "NOTOMATO", "docs": [{"type": "기획서", "title": "초개인화 식이관리 서비스 NOTOMATO 서비스 기획서", "planned": false, "slides": [], "pdf": ""}, {"type": "화면설계서", "title": "초개인화 식이관리 서비스 NOTOMATO 화면설계서", "planned": false, "slides": [], "pdf": ""}]};</script>
-<script src="../assets/site.js"></script>
+<script>window.PROJECT = {"no": "02", "name": "NOTOMATO", "docs": [{"type": "기획서", "title": "초개인화 식이관리 서비스 NOTOMATO 서비스 기획서", "slides": [], "pdf": ""}, {"type": "화면설계서", "title": "초개인화 식이관리 서비스 NOTOMATO 화면설계서", "slides": [], "pdf": ""}]};</script>
+<script src="../assets/site.js?v=case-docs"></script>
 </body>
 </html>
