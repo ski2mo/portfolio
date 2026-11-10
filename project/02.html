@@ -11,7 +11,7 @@ body{margin:0;background: #ffffff}
 a{color:#1a1a18;text-decoration:none}a:hover{text-decoration:underline;text-decoration-color:#e8461a;text-underline-offset:3px}
 a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
 </style>
-<link rel="stylesheet" href="../assets/site.css?v=case-typography">
+<link rel="stylesheet" href="../assets/site.css?v=case-spacing">
 </head>
 <body id="top">
 <div style="background: #ffffff; color: #1a1a18; font-family: 'Archivo', 'IBM Plex Sans KR', sans-serif">
@@ -44,25 +44,25 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
     <div data-sb="i-period" style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 0.8125rem; letter-spacing: 0.06em">진행 연도</span><span style="font-size: 1rem; line-height: 1.6">2026</span></div>
     <a href="#deck" class="jy-doc-link jy-doc-jump" style="font-size: 0.8125rem; letter-spacing: 0.06em">프로젝트 문서 보기 ↓</a>
   </section>
-  <section id="overview" data-sb="s-overview" style="display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 56px; padding: 120px 56px 0">
+  <section id="overview" data-sb="s-overview" class="jy-case-text">
     <div style="display: flex; flex-direction: column; gap: 12px">
       <span data-sb="overview-label" style="font-size: 0.8125rem; letter-spacing: 0.06em">01 — 프로젝트 소개 · OVERVIEW:</span>
       <h2 data-sb="ov-title" style="margin: 0; font-size: 1.125rem; font-weight: 600; line-height: 1.6">집에서 돌본 식물을 하남의 스마트팜에서 만나는 단지팜</h2>
     </div>
-    <div style="min-width: 0; display: flex; flex-direction: column; gap: 24px">
-      <p data-sb="ov-lead" style="margin: 0; max-width: 760px; font-size: 1.375rem; line-height: 1.6">단지팜은 하남시의 유휴공간을 가족형 스마트팜 체험으로 연결한 에듀테크 서비스입니다.<br><span class="jy-copy-clause">아이가 집에서 작물의 성장을 살피고 기록하면,</span> <span class="jy-copy-clause">보호자가 현장 방문을 예약하고 가족이 함께 수확과 쿠킹 클래스까지 경험하는 흐름을 팀으로 기획했습니다.</span></p>
-      <div data-sb="ov-cards" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px"><div data-sb="ov-prob" style="display: flex; flex-direction: column; gap: 8px; padding-top: 14px; border-top: 1px solid #1a1a18">
+    <div class="jy-case-content">
+      <p data-sb="ov-lead">단지팜은 하남시의 유휴공간을 가족형 스마트팜 체험으로 연결한 에듀테크 서비스입니다.<br>아이가 집에서 작물의 성장을 살피고 기록하면, 보호자가 현장 방문을 예약하고 가족이 함께 수확과 쿠킹 클래스까지 경험하는 흐름을 팀으로 기획했습니다.</p>
+      <div data-sb="ov-cards"><div data-sb="ov-prob">
         <span style="font-size: 0.8125rem; letter-spacing: 0.06em">A 해결할 문제</span>
         <span style="font-size: 1.125rem; font-weight: 600; line-height: 1.5">한 번 다녀오고 끝나는 체험</span>
-        <span style="font-size: 1rem; line-height: 1.7; color: #6b6b65">지역 체험이 일회성 방문에 그치면 아이가 다음에 다시 갈 이유를 찾기 어렵습니다.<br><span class="jy-copy-clause">단지팜에서는 방문 전에 돌보는 일이 시작되고,</span> <span class="jy-copy-clause">수확 이후에도 가족과 기록을 돌아볼 수 있도록 했습니다.</span></span>
-      </div><div data-sb="ov-imp" style="display: flex; flex-direction: column; gap: 8px; padding-top: 14px; border-top: 1px solid #1a1a18">
+        <p>지역 체험이 일회성 방문에 그치면 아이가 다음에 다시 갈 이유를 찾기 어렵습니다.<br>단지팜에서는 방문 전에 돌보는 일이 시작되고, 수확 이후에도 가족과 기록을 돌아볼 수 있도록 했습니다.</p>
+      </div><div data-sb="ov-imp">
         <span style="font-size: 0.8125rem; letter-spacing: 0.06em">B 핵심 개선</span>
         <span style="font-size: 1.125rem; font-weight: 600; line-height: 1.5">아이의 관찰과 보호자의 예약</span>
-        <span style="font-size: 1rem; line-height: 1.7; color: #6b6b65"><span class="jy-copy-clause">아이에게는 성장 알림,</span> <span class="jy-copy-clause">식물 일지,</span> <span class="jy-copy-clause">관찰 퀘스트를 제공하고 보호자에게는 성장 리포트와 예약 정보를 제공합니다.</span><br>한 가족 안에서도 체험을 이어가는 사람과 방문을 결정하는 사람의 요구를 나눴습니다.</span>
-      </div><div data-sb="ov-goal" style="display: flex; flex-direction: column; gap: 8px; padding-top: 14px; border-top: 1px solid #1a1a18">
+        <p>아이에게는 성장 알림, 식물 일지, 관찰 퀘스트를 제공하고 보호자에게는 성장 리포트와 예약 정보를 제공합니다.<br>한 가족 안에서도 체험을 이어가는 사람과 방문을 결정하는 사람의 요구를 나눴습니다.</p>
+      </div><div data-sb="ov-goal">
         <span style="font-size: 0.8125rem; letter-spacing: 0.06em">C 목표</span>
         <span style="font-size: 1.125rem; font-weight: 600; line-height: 1.5">수확을 다음 경험으로</span>
-        <span style="font-size: 1rem; line-height: 1.7; color: #6b6b65">스마트팜 방문은 작물과 직접 만나는 단계입니다.<br><span class="jy-copy-clause">도슨트 체험과 수확,</span> <span class="jy-copy-clause">직접 키운 작물을 활용하는 쿠킹 클래스를 이어 붙여 앱의 기록이 현장에서 의미를 갖도록 했습니다.</span></span>
+        <p>스마트팜 방문은 작물과 직접 만나는 단계입니다.<br>도슨트 체험과 수확, 직접 키운 작물을 활용하는 쿠킹 클래스를 이어 붙여 앱의 기록이 현장에서 의미를 갖도록 했습니다.</p>
       </div></div>
     </div>
   </section>
@@ -87,27 +87,27 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
       <a data-sb="dk-pdf" class="jy-doc-link" hidden>PDF 보기 ↗</a>
     </div>
   </section>
-  <section id="role" data-sb="s-role" style="display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 56px; padding: 120px 56px 0">
+  <section id="role" data-sb="s-role" class="jy-case-text">
     <div style="display: flex; flex-direction: column; gap: 12px">
       <span data-sb="role-label" style="font-size: 0.8125rem; letter-spacing: 0.06em">03 — 참여 과정 · PROCESS:</span>
       <h2 style="margin: 0; font-size: 1.125rem; font-weight: 600; line-height: 1.6">기획과 작업 과정</h2>
     </div>
-    <div style="min-width: 0; display: flex; flex-direction: column; gap: 24px">
-      <ul data-sb="case-steps" style="margin: 0; padding: 0; list-style: none">
-        <li style="padding: 16px 0; border-top: 1px solid #dcdcd4"><h3 style="margin: 0; font-size: 1.125rem; font-weight: 600; line-height: 1.6">하남에서 이어질 만한 체험을 찾았습니다</h3><p style="margin: 6px 0 0; font-size: 1.0625rem; line-height: 1.7"><span class="jy-copy-clause">팀은 유휴공간과 지역 체험 사례를 조사하고,</span> <span class="jy-copy-clause">단발성 행사와 반복 방문을 유도하는 서비스의 차이를 살폈습니다.</span><br>스마트팜을 택한 뒤에는 작물이 자라는 시간 자체를 앱을 다시 여는 이유로 삼았습니다.</p></li>
-        <li style="padding: 16px 0; border-top: 1px solid #dcdcd4"><h3 style="margin: 0; font-size: 1.125rem; font-weight: 600; line-height: 1.6">가족의 하루를 따라 접점을 나눴습니다</h3><p style="margin: 6px 0 0; font-size: 1.0625rem; line-height: 1.7"><span class="jy-copy-clause">아이에게는 관찰과 기록이,</span> <span class="jy-copy-clause">보호자에게는 예약과 일정 확인이 필요했습니다.</span><br>팀 시나리오에서는 집에서 성장 알림을 확인하는 때부터 현장에서 수확하고 집에서 경험을 돌아보는 때까지 행동을 이어 봤습니다.</p></li>
-        <li style="padding: 16px 0; border-top: 1px solid #dcdcd4"><h3 style="margin: 0; font-size: 1.125rem; font-weight: 600; line-height: 1.6">앱과 현장에서 필요한 정보를 연결했습니다</h3><p style="margin: 6px 0 0; font-size: 1.0625rem; line-height: 1.7"><span class="jy-copy-clause">팀의 정보구조 설계에는 작물 관리와 성장 리포트,</span> <span class="jy-copy-clause">체험 예약과 방문 정보가 담겼습니다.</span><br>가족이 각 단계에서 다음에 할 일을 알 수 있도록 기록에서 예약으로 넘어가는 접점을 구체화했습니다.</p></li>
+    <div class="jy-case-content">
+      <ul data-sb="case-steps">
+        <li><h3>하남에서 이어질 만한 체험을 찾았습니다</h3><p>팀은 유휴공간과 지역 체험 사례를 조사하고, 단발성 행사와 반복 방문을 유도하는 서비스의 차이를 살폈습니다.<br>스마트팜을 택한 뒤에는 작물이 자라는 시간 자체를 앱을 다시 여는 이유로 삼았습니다.</p></li>
+        <li><h3>가족의 하루를 따라 접점을 나눴습니다</h3><p>아이에게는 관찰과 기록이, 보호자에게는 예약과 일정 확인이 필요했습니다.<br>팀 시나리오에서는 집에서 성장 알림을 확인하는 때부터 현장에서 수확하고 집에서 경험을 돌아보는 때까지 행동을 이어 봤습니다.</p></li>
+        <li><h3>앱과 현장에서 필요한 정보를 연결했습니다</h3><p>팀의 정보구조 설계에는 작물 관리와 성장 리포트, 체험 예약과 방문 정보가 담겼습니다.<br>가족이 각 단계에서 다음에 할 일을 알 수 있도록 기록에서 예약으로 넘어가는 접점을 구체화했습니다.</p></li>
       </ul>
     </div>
   </section>
-  <section id="afterglow" data-sb="s-afterglow" style="display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 56px; padding: 120px 56px 0">
+  <section id="afterglow" data-sb="s-afterglow" class="jy-case-text">
     <div style="display: flex; flex-direction: column; gap: 12px">
       <span data-sb="afterglow-label" style="font-size: 0.8125rem; letter-spacing: 0.06em">04 — 회고 · AFTERGLOW:</span>
       <h2 data-sb="ag-title" style="margin: 0; font-size: 1.125rem; font-weight: 600; line-height: 1.6">온라인과 오프라인을 잇는 것은 다음 행동</h2>
     </div>
-    <div style="min-width: 0; display: flex; flex-direction: column; gap: 24px">
-      <p data-sb="ag-head" style="margin: 0; max-width: 760px; font-size: 2rem; line-height: 1.3; letter-spacing: 0.01em">예약 전에 이미 아이가 돌보는 식물이 있어야 했습니다.</p>
-      <p data-sb="ag-body" style="margin: 0; max-width: 760px; font-size: 1.125rem; line-height: 1.75">앱과 공간을 하나의 서비스라고 부르려면 둘 사이에 사용자가 실제로 옮겨갈 이유가 있어야 했습니다.<br><span class="jy-copy-clause">단지팜에서는 아이가 집에서 남긴 관찰 기록이 현장 방문의 이유가 되고,</span> <span class="jy-copy-clause">직접 수확한 경험이 다시 기록으로 돌아오는 흐름으로 그 연결을 설명했습니다.</span></p>
+    <div class="jy-case-content">
+      <p data-sb="ag-head">예약 전에 이미 아이가 돌보는 식물이 있어야 했습니다.</p>
+      <p data-sb="ag-body">앱과 공간을 하나의 서비스라고 부르려면 둘 사이에 사용자가 실제로 옮겨갈 이유가 있어야 했습니다.<br>단지팜에서는 아이가 집에서 남긴 관찰 기록이 현장 방문의 이유가 되고, 직접 수확한 경험이 다시 기록으로 돌아오는 흐름으로 그 연결을 설명했습니다.</p>
       <div data-sb="ag-skills" style="display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 1px solid #dcdcd4"><span style="font-size: 0.8125rem; letter-spacing: 0.06em">이 프로젝트로 배운 역량:</span><div data-sb="ag-tags" style="display: flex; flex-wrap: wrap; gap: 6px"><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">지역 리서치</span><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">가족 사용자 시나리오</span><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">온오프라인 서비스</span><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid #dcdcd4; border-radius: 11px; font-size: 0.875rem; white-space: nowrap">정보구조 설계</span></div></div>
     </div>
   </section>
@@ -116,7 +116,7 @@ a:focus-visible{outline:2px solid #1a1a18;outline-offset:3px}
     <ol>
       <li><h3>지역 조사</h3><p>하남의 공간과 기존 체험 사례를 비교해 스마트팜 경험을 구상했습니다.</p></li>
       <li><h3>서비스 시나리오</h3><p>아이의 관찰 기록과 보호자의 방문 예약을 한 흐름으로 연결했습니다.</p></li>
-      <li><h3>정보구조 설계</h3><p><span class="jy-copy-clause">성장 리포트,</span> <span class="jy-copy-clause">방문 정보,</span> <span class="jy-copy-clause">현장 체험을 앱 안의 메뉴와 화면으로 정리했습니다.</span></p></li>
+      <li><h3>정보구조 설계</h3><p>성장 리포트, 방문 정보, 현장 체험을 앱 안의 메뉴와 화면으로 정리했습니다.</p></li>
     </ol>
   </section>
   <nav data-sb="pnav" aria-label="발화 이동" style="margin-top: 160px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; padding: 28px 56px; border-top: 1px solid #dcdcd4">
