@@ -1,4 +1,6 @@
 /* 點火 — 공통 보정 (각 페이지 스타일은 페이지 안에 있음) */
+@font-face{font-family:Pretendard;src:url("fonts/Pretendard-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Pretendard;src:url("fonts/Pretendard-SemiBold.woff2") format("woff2");font-style:normal;font-weight:600;font-display:swap}
 html{scroll-behavior:smooth}
 body{overflow-x:hidden;-webkit-font-smoothing:antialiased}
 :root{--project-header-height:calc(33px + 1.21875rem)}
@@ -10,9 +12,11 @@ button{font:inherit}
 .jy-project-thumb{position:relative;display:grid;place-items:center;aspect-ratio:16/9;overflow:hidden;background:#ecece5;color:#6b6b65;font-family:'IBM Plex Mono','IBM Plex Sans KR',monospace;font-size:.8125rem}
 .jy-project-thumb img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
 .jy-img.jy-project-thumb{flex:1 1 560px}
-#overview[data-sb],#role[data-sb],#afterglow[data-sb]{word-break:keep-all;overflow-wrap:anywhere}
+.jy-project-hero,[data-sb="info"],section[data-sb^="s-"]{font-family:Pretendard,'IBM Plex Sans KR',sans-serif;font-weight:400;font-synthesis:none;word-break:keep-all;overflow-wrap:anywhere}
+:is(.jy-project-hero,section[data-sb^="s-"]) :is(h1,h2,h3,[data-sb="ag-head"]){font-weight:600}
+.jy-copy-clause{display:inline-block;max-inline-size:100%}
 .jy-case-deck{display:grid;grid-template-columns:360px minmax(0,1fr);gap:56px;padding:120px 56px 0}
-.jy-case-deck h2,.jy-case-docs h3,.jy-case-record h3{margin:8px 0 0;font-size:1.125rem;font-weight:500;line-height:1.5}
+.jy-case-deck h2,.jy-case-docs h3,.jy-case-record h3{margin:8px 0 0;font-size:1.125rem;line-height:1.5}
 .jy-case-docs{min-width:0;display:grid;gap:16px}
 .jy-case-docs p,.jy-case-record p{margin:8px 0 0;line-height:1.7;color:#6b6b65;word-break:keep-all}
 .jy-case-docs [hidden]{display:none}
