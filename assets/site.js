@@ -143,15 +143,6 @@
       '<iframe src="' + esc(d.pdf) + '" title="' + esc(d.title) + '"></iframe></div>');
   }
 
-  /* 진행 과정 사진 크게 보기 */
-  $$('[data-sb="rc-grid"] figure').forEach(function (f) {
-    f.style.cursor = 'zoom-in';
-    f.addEventListener('click', function () {
-      var im = f.querySelector('img'), cap = f.querySelector('figcaption');
-      open('<div class="ph"><div class="bar" style="position:static;display:flex;justify-content:space-between"><span>' + esc(cap ? cap.textContent.trim() : '') + '</span><a href="#" data-x>(닫기 ✕)</a></div><div class="im">' + (im ? '<img src="' + esc(im.src) + '" alt="' + esc(im.alt) + '">' : esc(f.firstElementChild.textContent)) + '</div></div>');
-    });
-  });
-
   /* 연료: 현장 기록 */
   var A = window.ARCHIVE;
   if (A) {
