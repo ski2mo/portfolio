@@ -262,3 +262,9 @@ section[id],footer[id]{scroll-margin-top:72px}
   .pin .figs{grid-template-columns:1fr 1fr}
   .pager .nx .t{font-size:clamp(36px,10vw,60px)}
 }
+
+/* methods v2: evidence emphasis */
+.mcols li.n{color:#b0b0b0}
+.mcols li em{display:block;margin-top:3px;font-style:normal;font-family:var(--sans);font-size:13px;letter-spacing:.04em;color:var(--mute)}
+.mkey{grid-column:2/5;margin:40px 0 0;font-family:var(--ko);font-weight:400;font-size:15px;letter-spacing:0;color:var(--mute);text-transform:none}
+@media (max-width:820px){.mkey{grid-column:1}}
