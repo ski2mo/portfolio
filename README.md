@@ -5,7 +5,7 @@ What I mean, what I make.
 ## 페이지
 - index.html — 메인 (원스크롤: 표지 · Work · Methods · About · Contact)
 - project.html — Work 전체 목록
-- project/01–06.html — 프로젝트 상세
+- project/01–07.html — 프로젝트 상세 (02 단지팜은 목록에서 제외)
 - profile.html — About (프로필 · 이력 · 툴)
 - archive.html — 활동 아카이브
 - 404.html — 페이지 없음

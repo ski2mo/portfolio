@@ -74,3 +74,14 @@
     });
   });
 })();
+
+/* copy buttons */
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+  var label = b.textContent;
+  b.addEventListener('click', function () {
+    var t = b.getAttribute('data-copy');
+    var ok = function () { b.textContent = 'Copied'; b.classList.add('done'); setTimeout(function () { b.textContent = label; b.classList.remove('done'); }, 1600); };
+    var fb = function () { var a = document.createElement('textarea'); a.value = t; a.setAttribute('readonly', ''); a.style.position = 'fixed'; a.style.opacity = '0'; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); ok(); } catch (e) {} a.remove(); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(t).then(ok, fb); else fb();
+  });
+});
