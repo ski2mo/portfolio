@@ -11,8 +11,8 @@ What I mean, what I make.
 - 404.html — 페이지 없음
 
 ## 디자인 파일
-- assets/c04.css — 전체 스타일
-- assets/c04.js — 인터랙션 (펼치기, 스크롤 표시, 등장 효과, 아카이브 필터)
+- assets/c01.css — 전체 스타일 (Concept01)
+- assets/c01.js — 인터랙션 (펼치기, 스크롤 표시, 등장 효과, 아카이브 필터)
 
 ## 문서 PDF 연결
 project/0N.html의 02. Documents에서 해당 문서 줄의 `<span class="note">준비 중</span>`을 PDF 링크로 바꾸면 됩니다.
