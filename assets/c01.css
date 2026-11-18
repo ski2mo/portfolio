@@ -268,3 +268,6 @@ a.pill:hover,button.pill:hover{color:var(--pink);border-color:var(--pink)}
   .mm{grid-template-columns:minmax(0,1fr);row-gap:56px;margin-top:56px}
   .mm .mean,.mm .make{grid-column:1;margin-top:0}
 }
+.hero .r.end{justify-content:flex-end}
+.chead .sum{max-width:none;font-size:clamp(17px,1.45vw,26px);white-space:nowrap}
+@media (max-width:1100px){.chead .sum{white-space:normal}}
