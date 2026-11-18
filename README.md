@@ -19,3 +19,6 @@ project/0N.html의 02. Documents에서 해당 문서 줄의 `<span class="note">
 
 ## 아카이브 사진
 archive.html의 `<span class="ph">사진 N 준비 중</span>`을 `<img src="assets/archive/01-1.jpg" alt="">`로 바꾸면 됩니다.
+
+## 이력서 · 자기소개서
+assets/docs/resume.pdf, assets/docs/cover-letter.pdf 이름으로 PDF를 넣으면 About과 Contact의 바로가기가 연결됩니다.
